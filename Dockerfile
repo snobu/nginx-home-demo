@@ -9,6 +9,7 @@ RUN apt-get update \
 
 RUN mkdir -p /run/sshd
 
-EXPOSE 80 2222
+CMD service ssh start
+CMD service nginx start 
 
-CMD ["/usr/sbin/sshd", "-D"]
+EXPOSE 80 2222
