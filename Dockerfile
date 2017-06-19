@@ -7,4 +7,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends openssh-server \
   && echo "root:Docker!" | chpasswd
 
+RUN mkdir -p /run/sshd
+RUN /usr/sbin/sshd
+
 EXPOSE 80 2222
