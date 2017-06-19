@@ -8,6 +8,6 @@ RUN apt-get update \
   && echo "root:Docker!" | chpasswd
 
 RUN mkdir -p /run/sshd
-RUN /usr/sbin/sshd
+RUN sleep 5 && /usr/sbin/sshd &
 
 EXPOSE 80 2222
